@@ -6,6 +6,7 @@ const cardEls = document.querySelectorAll('.box__card');
 const overlayEl = document.querySelector('.overlay');
 const overlayPopupEl = overlayEl.querySelector('.popup');
 const closeOverlayPopupBtnEl = overlayEl.querySelector('.popup__close-btn');
+const fieldEls = document.querySelectorAll('.box__field');
 
 function closePopup() {
   window.removeEventListener('click', closePopupByClick);
@@ -53,6 +54,19 @@ closeOverlayPopupBtnEl.addEventListener('click', () => {
 });
 
 cardEls.forEach((c) => {
+  c.addEventListener('click', () => {
+    if (overlayEl.classList.contains('active')) {
+      window.removeEventListener('click', closeOverlayByClick);
+      overlayPopupEl.classList.remove('active');
+      overlayEl.classList.remove('active');
+    } else {
+      window.addEventListener('click', closeOverlayByClick);
+      overlayPopupEl.classList.add('active');
+      overlayEl.classList.add('active');
+    }
+  });
+});
+fieldEls.forEach((c) => {
   c.addEventListener('click', () => {
     if (overlayEl.classList.contains('active')) {
       window.removeEventListener('click', closeOverlayByClick);
