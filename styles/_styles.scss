@@ -14,6 +14,7 @@ body::after {
   opacity: 0.08;
   overflow: hidden;
   animation: bg 8s linear infinite;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -83,6 +84,20 @@ body::before {
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
+  &__go-back-icon {
+    width: 16px;
+  }
+  &_adv {
+    justify-content: start;
+    gap: 16px;
+  }
+  &__heading {
+    text-shadow: -0.04em -0.04em #000, -0.04em 0 #000, -0.04em 0.04em #000,
+      0 -0.04em #000, 0 0 #000, 0 0.04em #000, 0.04em -0.04em #000,
+      -0.04em 0 #000, 0.04em 0.04em #000, 0 0.1em #000, -0.05em 0.08em #000,
+      0.05em 0.08em #000;
+    color: #fff;
+  }
   &__logo-link {
     -webkit-font-smoothing: antialiased;
     color: #fff;
@@ -161,10 +176,25 @@ body::before {
 
 .main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 126px;
+  pre {
+    width: 100%;
+    max-width: unset;
+    white-space: break-spaces;
+    font-size: 20px;
+    text-shadow: -0.04em -0.04em #000, -0.04em 0 #000, -0.04em 0.04em #000,
+      0 -0.04em #000, 0 0 #000, 0 0.04em #000, 0.04em -0.04em #000,
+      -0.04em 0 #000, 0.04em 0.04em #000, 0 0.1em #000, -0.05em 0.08em #000,
+      0.05em 0.08em #000;
+    color: #fff;
+  }
 }
 
 .box {
